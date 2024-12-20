@@ -1,0 +1,26 @@
+<?php
+// 
+// Inclusion du framework
+include_once("framework/view.fw.php");
+
+// 
+///////////////////////////////////////////////////////
+// A COMPLETER
+///////////////////////////////////////////////////////
+
+// 
+
+////////////////////////////////////////////////////////////////////////////
+// Construction de la vue
+////////////////////////////////////////////////////////////////////////////
+$view = new View();
+var_dump($_SESSION);
+if (!$_SESSION['connected']) {
+    $view->display('login');
+} else {
+  $view->assign('title', "Page de déconnexion");
+  $view->assign('message','Voulez-vous vous déconnecter ?');
+}
+$view->display('message');
+?>
+
